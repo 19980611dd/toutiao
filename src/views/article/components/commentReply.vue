@@ -26,19 +26,25 @@
 
     <!-- 发布评论 -->
     <van-popup v-model="isPostShow" position="bottom">
-      评论回复评论回复
+      <commentPost
+        type="c"
+        :target="currentComment.com_id"
+        @post-success="postSuccess"
+      ></commentPost>
     </van-popup>
     <!-- /发布评论 -->
   </div>
 </template>
 <script>
+import commentPost from '@/views/article/components/commentPost.vue'
 import commentList from '@/views/article/components/commentList.vue'
 import commentItem from '@/views/article/components/commentItem.vue'
 export default {
   name: 'commentReply',
   components: {
     commentItem,
-    commentList
+    commentList,
+    commentPost
   },
   props: {
     currentComment: {
@@ -56,7 +62,13 @@ export default {
   watch: {},
   created() {},
   mounted() {},
-  methods: {}
+  methods: {
+    postSuccess(comment) {
+      this.isPostShow = false
+      this.list.unshift(comment)
+      this.currentComment.reply_count++
+    }
+  }
 }
 </script>
 <style scoped lang="less">

@@ -24,6 +24,10 @@ export default {
     target: {
       type: [String, Number],
       required: true
+    },
+    type: {
+      type: [String, Number],
+      required: true
     }
   },
   data() {
@@ -47,18 +51,20 @@ export default {
         const res = await addComment({
           target: this.target.toString(),
           content: this.message,
-          art_id: null
+          art_id: this.type === 'c' ? this.articleId : null
         })
         // 关闭弹层
         this.$toast.success('发布评论成功')
         this.$emit('post-success', res.data.data.new_obj)
+        this.message = ''
         console.log(res)
       } catch (error) {
         this.$toast.success('发布评论失败')
         console.log(error)
       }
     }
-  }
+  },
+  inject: ['articleId']
 }
 </script>
 

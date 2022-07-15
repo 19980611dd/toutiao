@@ -166,6 +166,11 @@ export default {
       currentComment: {}
     }
   },
+  provide() {
+    return {
+      articleId: this.articleId
+    }
+  },
   computed: {},
   watch: {},
   created() {
