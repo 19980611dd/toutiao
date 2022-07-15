@@ -1,0 +1,56 @@
+import {
+  NavBar,
+  Form,
+  Field,
+  Button,
+  Toast,
+  CountDown,
+  Tabbar,
+  TabbarItem,
+  Cell,
+  Icon,
+  Image,
+  Grid,
+  GridItem,
+  Popup,
+  Dialog,
+  Tab,
+  Tabs,
+  List,
+  PullRefresh,
+  Search,
+  Tag,
+  Loading,
+  Divider,
+  ImagePreview
+} from 'vant'
+const elsments = [
+  NavBar,
+  Form,
+  Field,
+  Button,
+  Toast,
+  CountDown,
+  Tabbar,
+  TabbarItem,
+  Cell,
+  Icon,
+  Image,
+  Grid,
+  GridItem,
+  Popup,
+  Dialog,
+  Tab,
+  Tabs,
+  List,
+  PullRefresh,
+  Search,
+  Tag,
+  Loading,
+  Divider,
+  ImagePreview
+]
+
+export default function (Vue) {
+  elsments.forEach((item) => Vue.use(item))
+}
