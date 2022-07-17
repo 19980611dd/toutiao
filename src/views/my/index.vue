@@ -23,7 +23,7 @@
           <span class="name">黑马头条</span>
         </div>
         <div class="right">
-          <van-button type="default" size="mini" round>编辑资料</van-button>
+          <van-button type="default" size="mini" round to="/user/profile">编辑资料</van-button>
         </div>
       </div>
       <!-- 粉丝、关注 -->

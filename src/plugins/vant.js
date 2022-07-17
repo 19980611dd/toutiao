@@ -22,7 +22,9 @@ import {
   Tag,
   Loading,
   Divider,
-  ImagePreview
+  ImagePreview,
+  Picker,
+  DatetimePicker
 } from 'vant'
 const elsments = [
   NavBar,
@@ -48,7 +50,9 @@ const elsments = [
   Tag,
   Loading,
   Divider,
-  ImagePreview
+  Picker,
+  ImagePreview,
+  DatetimePicker
 ]
 
 export default function (Vue) {
